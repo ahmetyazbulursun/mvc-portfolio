@@ -1,0 +1,32 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Contact>
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-5">
+    <table class="table table-borderless table-responsive-sm table-responsive-md bg-light">
+        <thead align="center">
+            <tr>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Mail</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        @foreach (var x in Model)
+        {
+            <tbody align="center">
+                <tr>
+                    <td>@x.PHONE</td>
+                    <td>@x.ADRESS</td>
+                    <td>@x.MAIL</td>
+                    <td><a href="/Admin/ContactUpdate/@x.ID" class="btn btn-outline-success">Update</a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+<div style="height: 705px"></div>

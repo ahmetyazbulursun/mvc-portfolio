@@ -1,0 +1,30 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_About>
+
+<section id="about">
+    <div class="container">
+        <div class="section-title h2 text-center mb-5">
+            <h2 class="mb-0">About Me</h2>
+            <span class="title-letter">A</span>
+        </div>
+        <div class="row">
+            @foreach (var x in Model)
+            {
+                <div class="col-md-6 col-lg-4 d-none d-lg-block">
+                    <img class="img-fluid w-100 rounded" src="@x.IMAGE2" alt="image">
+                </div>
+                <div class="col-lg-8">
+
+                    <h3>@x.FULLNAME</h3>
+                    <p class="lead">@x.JOB</p>
+                    <p class="mb-5">@x.DETAIL</p>
+
+                    @Html.Action("Education", "Home")
+
+                    <a href="/resume/ahmet-hakan-eroglu-resume.pdf" class="btn btn-primary" download>Download CV</a>
+                    <a href="#contact" class="btn btn-light scrollto">Send Message</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>

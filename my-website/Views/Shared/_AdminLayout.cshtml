@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Admin | Ahmet Hakan Eroglu</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ahmet Hakan Eroglu Admin Page.">
+    <meta name="keywords" content="portfolio, software, software developer, c#, asp, mvc">
+    <meta name="author" content="Ahmet Hakan Eroglu">
+
+    <link rel="stylesheet" href="~/template/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/template/assets/css/style.css">
+    <link rel="stylesheet" href="~/template/assets/css/utilities.css">
+
+    <link rel="stylesheet" href="~/template/assets/css/custom.css">
+
+    <link rel="icon" href="~/icon.ico" />
+
+    <link rel="stylesheet" href="~/template/assets/css/slick.min.css" type="text/css">
+    <link rel="stylesheet" href="~/template/assets/css/vegas.min.css" type="text/css">
+    <link rel="stylesheet" href="~/template/assets/css/featherlight.min.css" type="text/css">
+    <link rel="stylesheet" href="~/template/assets/css/featherlight.gallery.min.css" type="text/css">
+    <link rel="stylesheet" href="~/template/assets/css/fontawesome/all.min.css" type="text/css">
+    <link rel="stylesheet" href="~/template/assets/css/themify-icons.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700%7CMRoboto:300,400,500,700display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="preloader" class="preloader">
+        <div class="loader-status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <div class="site-container">
+
+        <div id="top"></div>
+
+        <!-- Navigation toggle -->
+        <button type="button" id="navigation-toggle" class="nav-toggle nav-toggle-dark bg-white">
+            <span></span>
+        </button>
+
+        <!-- Site header -->
+        <header class="site-header site-header-dark bg-white">
+            <div class="header-inner">
+                <div class="header-brand">
+                    <!-- Logo -->
+                    <a href="/Home/Index" target="_blank" rel="noreferrer" class="logo">
+                        <span style="font-size: 22px">Ahmet Hakan Eroglu</span>
+                        <span class="title-letter" style="font-size: 2em; ">ADMIN</span>
+                    </a>
+                </div>
+                <div class="nav-divider bg-dark mb-4"></div>
+                <nav class="site-nav">
+                    <ul id="navigation" class="text-center">
+
+                        <li>
+                            <a href="/Admin/About">About</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Accounts">Accounts</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Admin">Admin</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Certificates">Certificates</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Contact">Contact</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Education">Education</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Experiences">Experiences</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Interests">Interests</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Messages">Messages</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Projects">Projects</a>
+                        </li>
+
+                        <li>
+                            <a href="/Admin/Skills">Skills</a>
+                        </li>
+
+                        <li>
+                            <a href="/Login/Logout" class="text-secondary">Logout</a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <div class="nav-divider bg-dark my-4"></div>
+
+                <p class="text-center pt-2">&copy; @DateTime.Now.Year Ahmet Hakan Eroglu</p>
+
+            </div>
+        </header>
+
+        <!-- Header overlay -->
+        <div class="header-overlay">
+            <div class="overlay-inner bg-dark opacity-80"></div>
+        </div>
+
+        <!-- Back to top button -->
+        <button type="button" id="backtotop" class="btn btn-primary btn-icon">
+            <span class="btn-icon-inner fas fa-angle-up"></span>
+        </button>
+
+        <!-- Page content -->
+        <div class="page-wrapper">
+            <div class="page-content">
+
+                @RenderBody()
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/template/assets/js/jquery.min.js"></script>
+    <script src="~/template/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/template/assets/js/jquery.easing.min.js"></script>
+    <script src="~/template/assets/js/jquery.validate.min.js"></script>
+    <script src="~/template/assets/js/jquery.form.min.js"></script>
+    <script src="~/template/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/template/assets/js/isotope.pkgd.min.js"></script>
+    <script src="~/template/assets/js/jquery.detect_swipe.min.js"></script>
+    <script src="~/template/assets/js/featherlight.min.js"></script>
+    <script src="~/template/assets/js/featherlight.gallery.min.js"></script>
+    <script src="~/template/assets/js/granim.min.js"></script>
+    <script src="~/template/assets/js/slick.min.js"></script>
+    <script src="~/template/assets/js/vegas.min.js"></script>
+    <script src="~/template/assets/js/typed.min.js"></script>
+
+    <script src="~/template/assets/js/main.js"></script>
+
+</body>
+</html>

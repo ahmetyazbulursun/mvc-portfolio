@@ -1,0 +1,31 @@
+﻿@model my_website.Models.Entity.Tbl_Messages
+
+@{
+    ViewBag.Title = "MessageDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-5">
+    <div class="mb-3">
+        <div class="row">
+            @Html.HiddenFor(x => x.ID)
+            <div class="form-group col-6">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="FULLNAME" value="@Html.DisplayTextFor(x=>x.FULLNAME)" class="form-control bg-white" readonly />
+            </div>
+            <div class="form-group col-6">
+                <label class="form-label">Mail</label>
+                <input type="text" name="MAIL" value="@Html.DisplayTextFor(x=>x.MAIL)" class="form-control bg-white" readonly />
+            </div>
+            <div class="form-group col-12">
+                <label class="form-label">Subject</label>
+                <input type="text" name="SUBJECT" value="@Html.DisplayTextFor(x=>x.SUBJECT)" class="form-control bg-white" readonly />
+            </div>
+            <div class="form-group col-12">
+                <label class="form-label">Message</label> 
+                @Html.TextAreaFor(x=>x.MESSAGE, new { @class= "form-control bg-white", @rows="7", @readonly="readonly" })
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 370px;"></div>

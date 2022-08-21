@@ -1,0 +1,28 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Experience>
+
+<section id="experience" class="pb-0">
+    <div class="container">
+        <div class="section-title h2 text-center mb-5">
+            <h2 class="mb-0 text-center">Experience</h2>
+            <span class="title-letter text-center">E</span>
+        </div>
+
+        @foreach (var x in Model)
+        {
+            <div class="row">
+                <div class="col-lg-4 mb-1 mb-lg-0">
+                    <p class="h5 text-center">@x.HEADER</p>
+                    <p class="opacity-75 text-center">@x.COMPANYNAME, @x.STARTDATE - @x.ENDDATE</p>
+                </div>
+                <div class="col-lg-8">
+                    <p class="text-center">@x.DETAIL</p>
+                </div>
+            </div>
+
+            <hr />
+
+        }
+
+    </div>
+</section>

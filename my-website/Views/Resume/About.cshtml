@@ -1,0 +1,11 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_About>
+
+<div class="profile-container">
+    @foreach (var x in Model)
+    {
+        <img class="profile img-fluid rounded-circle" src="@x.RESUMEIMAGE" alt="image" />
+        <h1 class="name">@x.FULLNAME</h1>
+        <h3 class="tagline">@x.JOB</h3>
+    }
+</div>

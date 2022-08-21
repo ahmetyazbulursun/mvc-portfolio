@@ -1,0 +1,23 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Experience>
+
+<section class="section experiences-section">
+    <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-briefcase"></i></span>Experiences</h2>
+
+    @foreach (var x in Model)
+    {
+        <div class="item">
+            <div class="meta">
+                <div class="upper-row">
+                    <h3 class="job-title">@x.HEADER</h3>
+                    <div class="time">@x.STARTDATE - @x.ENDDATE</div>
+                </div>
+                <div class="company">@x.COMPANYNAME</div>
+            </div>
+            <div class="details">
+                <p>@x.DETAIL</p>
+            </div>
+        </div>
+    }
+
+</section>

@@ -1,0 +1,13 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Accounts>
+
+<div class="contact-container container-block">
+    <ul class="list-unstyled contact-list">
+        <li class="website"><i class="fa-solid fa-globe"></i><a href="https://ahmetyazbulursun.com" target="_blank">ahmetyazbulursun.com</a></li>
+        <li class="email"><i class="fa-solid fa-envelope"></i><a href="mailto: aheroglu@outlook.com">aheroglu@outlook.com</a></li>
+        @foreach (var x in Model)
+        {
+            <li class="linkedin"><i class="fa-brands @x.Tbl_AccountIcons.ICON"></i><a href="@x.LINK" target="_blank">@x.NAME</a></li>
+        }
+    </ul>
+</div>

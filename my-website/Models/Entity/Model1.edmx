@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_About">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FULLNAME" Type="varchar" MaxLength="50" />
+          <Property Name="IMAGE" Type="varchar(max)" />
+          <Property Name="IMAGE2" Type="varchar(max)" />
+          <Property Name="RESUMEIMAGE" Type="varchar(max)" />
+          <Property Name="JOB" Type="varchar" MaxLength="50" />
+          <Property Name="DETAIL" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <EntityType Name="Tbl_AccountIcons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="ICON" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Accounts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="ICONID" Type="int" />
+          <Property Name="LINK" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="USERNAME" Type="varchar" MaxLength="20" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Tbl_Certificate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="250" />
+          <Property Name="LINK" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHONE" Type="varchar" MaxLength="50" />
+          <Property Name="ADRESS" Type="varchar" MaxLength="100" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DEPARTMENT" Type="varchar" MaxLength="50" />
+          <Property Name="SCHOOL" Type="varchar" MaxLength="50" />
+          <Property Name="STARTDATE" Type="varchar" MaxLength="50" />
+          <Property Name="ENDDATE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Experience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HEADER" Type="varchar" MaxLength="50" />
+          <Property Name="COMPANYNAME" Type="varchar" MaxLength="100" />
+          <Property Name="STARTDATE" Type="varchar" MaxLength="50" />
+          <Property Name="ENDDATE" Type="varchar" MaxLength="50" />
+          <Property Name="DETAIL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Interests">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="INTEREST" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Messages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FULLNAME" Type="varchar" MaxLength="50" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="SUBJECT" Type="varchar" MaxLength="100" />
+          <Property Name="MESSAGE" Type="varchar" MaxLength="500" />
+          <Property Name="DATE" Type="date" />
+          <Property Name="STATUS" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_ProjectCategories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="50" />
+          <Property Name="CATEGORY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_ProjectImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PROJECTID" Type="int" />
+          <Property Name="IMAGE" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Projects">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CATEGORYID" Type="int" />
+          <Property Name="HEADER" Type="varchar" MaxLength="100" />
+          <Property Name="IMAGE" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SKILL" Type="varchar" MaxLength="50" />
+          <Property Name="VALUE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Tbl_Accounts_Tbl_AccountIcons">
+          <End Role="Tbl_AccountIcons" Type="Self.Tbl_AccountIcons" Multiplicity="0..1" />
+          <End Role="Tbl_Accounts" Type="Self.Tbl_Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_AccountIcons">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_Accounts">
+              <PropertyRef Name="ICONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ProjectImages_Tbl_Projects">
+          <End Role="Tbl_Projects" Type="Self.Tbl_Projects" Multiplicity="0..1" />
+          <End Role="Tbl_ProjectImages" Type="Self.Tbl_ProjectImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Projects">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_ProjectImages">
+              <PropertyRef Name="PROJECTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Projects_Tbl_ProjectCategories">
+          <End Role="Tbl_ProjectCategories" Type="Self.Tbl_ProjectCategories" Multiplicity="0..1" />
+          <End Role="Tbl_Projects" Type="Self.Tbl_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_ProjectCategories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_Projects">
+              <PropertyRef Name="CATEGORYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Tbl_About" EntityType="Self.Tbl_About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_AccountIcons" EntityType="Self.Tbl_AccountIcons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Accounts" EntityType="Self.Tbl_Accounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Admin" EntityType="Self.Tbl_Admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Certificate" EntityType="Self.Tbl_Certificate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Contact" EntityType="Self.Tbl_Contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Education" EntityType="Self.Tbl_Education" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Experience" EntityType="Self.Tbl_Experience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Interests" EntityType="Self.Tbl_Interests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Messages" EntityType="Self.Tbl_Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ProjectCategories" EntityType="Self.Tbl_ProjectCategories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_ProjectImages" EntityType="Self.Tbl_ProjectImages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Projects" EntityType="Self.Tbl_Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Skills" EntityType="Self.Tbl_Skills" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Accounts_Tbl_AccountIcons" Association="Self.FK_Tbl_Accounts_Tbl_AccountIcons">
+            <End Role="Tbl_AccountIcons" EntitySet="Tbl_AccountIcons" />
+            <End Role="Tbl_Accounts" EntitySet="Tbl_Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ProjectImages_Tbl_Projects" Association="Self.FK_Tbl_ProjectImages_Tbl_Projects">
+            <End Role="Tbl_Projects" EntitySet="Tbl_Projects" />
+            <End Role="Tbl_ProjectImages" EntitySet="Tbl_ProjectImages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Projects_Tbl_ProjectCategories" Association="Self.FK_Tbl_Projects_Tbl_ProjectCategories">
+            <End Role="Tbl_ProjectCategories" EntitySet="Tbl_ProjectCategories" />
+            <End Role="Tbl_Projects" EntitySet="Tbl_Projects" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_AccountIcons">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ICON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Accounts" Relationship="Self.FK_Tbl_Accounts_Tbl_AccountIcons" FromRole="Tbl_AccountIcons" ToRole="Tbl_Accounts" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Accounts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ICONID" Type="Int32" />
+          <Property Name="LINK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_AccountIcons" Relationship="Self.FK_Tbl_Accounts_Tbl_AccountIcons" FromRole="Tbl_Accounts" ToRole="Tbl_AccountIcons" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Accounts_Tbl_AccountIcons">
+          <End Role="Tbl_AccountIcons" Type="Self.Tbl_AccountIcons" Multiplicity="0..1" />
+          <End Role="Tbl_Accounts" Type="Self.Tbl_Accounts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_AccountIcons">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_Accounts">
+              <PropertyRef Name="ICONID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_AccountIcons" EntityType="Self.Tbl_AccountIcons" />
+          <EntitySet Name="Tbl_Accounts" EntityType="Self.Tbl_Accounts" />
+          <AssociationSet Name="FK_Tbl_Accounts_Tbl_AccountIcons" Association="Self.FK_Tbl_Accounts_Tbl_AccountIcons">
+            <End Role="Tbl_AccountIcons" EntitySet="Tbl_AccountIcons" />
+            <End Role="Tbl_Accounts" EntitySet="Tbl_Accounts" />
+          </AssociationSet>
+          <EntitySet Name="Tbl_About" EntityType="Model.Tbl_About" />
+          <EntitySet Name="Tbl_Contact" EntityType="Model.Tbl_Contact" />
+          <EntitySet Name="Tbl_Experience" EntityType="Model.Tbl_Experience" />
+          <EntitySet Name="Tbl_Messages" EntityType="Model.Tbl_Messages" />
+          <EntitySet Name="Tbl_ProjectCategories" EntityType="Model.Tbl_ProjectCategories" />
+          <EntitySet Name="Tbl_ProjectImages" EntityType="Model.Tbl_ProjectImages" />
+          <EntitySet Name="Tbl_Projects" EntityType="Model.Tbl_Projects" />
+          <EntitySet Name="Tbl_Skills" EntityType="Model.Tbl_Skills" />
+          <EntitySet Name="Tbl_Education" EntityType="Model.Tbl_Education" />
+          <AssociationSet Name="FK_Tbl_Projects_Tbl_ProjectCategories" Association="Model.FK_Tbl_Projects_Tbl_ProjectCategories">
+            <End Role="Tbl_ProjectCategories" EntitySet="Tbl_ProjectCategories" />
+            <End Role="Tbl_Projects" EntitySet="Tbl_Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_ProjectImages_Tbl_Projects" Association="Model.FK_Tbl_ProjectImages_Tbl_Projects">
+            <End Role="Tbl_Projects" EntitySet="Tbl_Projects" />
+            <End Role="Tbl_ProjectImages" EntitySet="Tbl_ProjectImages" />
+          </AssociationSet>
+          <EntitySet Name="Tbl_Interests" EntityType="Model.Tbl_Interests" />
+          <EntitySet Name="Tbl_Admin" EntityType="Model.Tbl_Admin" />
+          <EntitySet Name="Tbl_Certificate" EntityType="Model.Tbl_Certificate" />
+        </EntityContainer>
+        <EntityType Name="Tbl_About">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="JOB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETAIL" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="RESUMEIMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Contact">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADRESS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Experience">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HEADER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COMPANYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="STARTDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENDDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DETAIL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Messages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FULLNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUBJECT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MESSAGE" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="STATUS" Type="Boolean" />
+          <Property Name="DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Tbl_ProjectCategories">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CATEGORY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Projects" Relationship="Model.FK_Tbl_Projects_Tbl_ProjectCategories" FromRole="Tbl_ProjectCategories" ToRole="Tbl_Projects" />
+        </EntityType>
+        <EntityType Name="Tbl_ProjectImages">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PROJECTID" Type="Int32" />
+          <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Projects" Relationship="Model.FK_Tbl_ProjectImages_Tbl_Projects" FromRole="Tbl_ProjectImages" ToRole="Tbl_Projects" />
+        </EntityType>
+        <EntityType Name="Tbl_Projects">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CATEGORYID" Type="Int32" />
+          <Property Name="HEADER" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_ProjectCategories" Relationship="Model.FK_Tbl_Projects_Tbl_ProjectCategories" FromRole="Tbl_Projects" ToRole="Tbl_ProjectCategories" />
+          <NavigationProperty Name="Tbl_ProjectImages" Relationship="Model.FK_Tbl_ProjectImages_Tbl_Projects" FromRole="Tbl_Projects" ToRole="Tbl_ProjectImages" />
+        </EntityType>
+        <EntityType Name="Tbl_Skills">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SKILL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VALUE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Education">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SCHOOL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="STARTDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ENDDATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Tbl_Projects_Tbl_ProjectCategories">
+          <End Type="Model.Tbl_ProjectCategories" Role="Tbl_ProjectCategories" Multiplicity="0..1" />
+          <End Type="Model.Tbl_Projects" Role="Tbl_Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_ProjectCategories">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_Projects">
+              <PropertyRef Name="CATEGORYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_ProjectImages_Tbl_Projects">
+          <End Type="Model.Tbl_Projects" Role="Tbl_Projects" Multiplicity="0..1" />
+          <End Type="Model.Tbl_ProjectImages" Role="Tbl_ProjectImages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Projects">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tbl_ProjectImages">
+              <PropertyRef Name="PROJECTID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tbl_Interests">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="INTEREST" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Admin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USERNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Certificate">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LINK" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Tbl_AccountIcons">
+            <EntityTypeMapping TypeName="Model.Tbl_AccountIcons">
+              <MappingFragment StoreEntitySet="Tbl_AccountIcons">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ICON" ColumnName="ICON" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Accounts">
+            <EntityTypeMapping TypeName="Model.Tbl_Accounts">
+              <MappingFragment StoreEntitySet="Tbl_Accounts">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ICONID" ColumnName="ICONID" />
+                <ScalarProperty Name="LINK" ColumnName="LINK" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_About">
+            <EntityTypeMapping TypeName="Model.Tbl_About">
+              <MappingFragment StoreEntitySet="Tbl_About">
+                <ScalarProperty Name="RESUMEIMAGE" ColumnName="RESUMEIMAGE" />
+                <ScalarProperty Name="IMAGE2" ColumnName="IMAGE2" />
+                <ScalarProperty Name="DETAIL" ColumnName="DETAIL" />
+                <ScalarProperty Name="JOB" ColumnName="JOB" />
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Contact">
+            <EntityTypeMapping TypeName="Model.Tbl_Contact">
+              <MappingFragment StoreEntitySet="Tbl_Contact">
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+                <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Experience">
+            <EntityTypeMapping TypeName="Model.Tbl_Experience">
+              <MappingFragment StoreEntitySet="Tbl_Experience">
+                <ScalarProperty Name="DETAIL" ColumnName="DETAIL" />
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="COMPANYNAME" ColumnName="COMPANYNAME" />
+                <ScalarProperty Name="HEADER" ColumnName="HEADER" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Messages">
+            <EntityTypeMapping TypeName="Model.Tbl_Messages">
+              <MappingFragment StoreEntitySet="Tbl_Messages">
+                <ScalarProperty Name="DATE" ColumnName="DATE" />
+                <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+                <ScalarProperty Name="MESSAGE" ColumnName="MESSAGE" />
+                <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ProjectCategories">
+            <EntityTypeMapping TypeName="Model.Tbl_ProjectCategories">
+              <MappingFragment StoreEntitySet="Tbl_ProjectCategories">
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CATEGORY" ColumnName="CATEGORY" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_ProjectImages">
+            <EntityTypeMapping TypeName="Model.Tbl_ProjectImages">
+              <MappingFragment StoreEntitySet="Tbl_ProjectImages">
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="PROJECTID" ColumnName="PROJECTID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Projects">
+            <EntityTypeMapping TypeName="Model.Tbl_Projects">
+              <MappingFragment StoreEntitySet="Tbl_Projects">
+                <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
+                <ScalarProperty Name="HEADER" ColumnName="HEADER" />
+                <ScalarProperty Name="CATEGORYID" ColumnName="CATEGORYID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Skills">
+            <EntityTypeMapping TypeName="Model.Tbl_Skills">
+              <MappingFragment StoreEntitySet="Tbl_Skills">
+                <ScalarProperty Name="VALUE" ColumnName="VALUE" />
+                <ScalarProperty Name="SKILL" ColumnName="SKILL" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Education">
+            <EntityTypeMapping TypeName="Model.Tbl_Education">
+              <MappingFragment StoreEntitySet="Tbl_Education">
+                <ScalarProperty Name="ENDDATE" ColumnName="ENDDATE" />
+                <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+                <ScalarProperty Name="SCHOOL" ColumnName="SCHOOL" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Interests">
+            <EntityTypeMapping TypeName="Model.Tbl_Interests">
+              <MappingFragment StoreEntitySet="Tbl_Interests">
+                <ScalarProperty Name="INTEREST" ColumnName="INTEREST" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Admin">
+            <EntityTypeMapping TypeName="Model.Tbl_Admin">
+              <MappingFragment StoreEntitySet="Tbl_Admin">
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Certificate">
+            <EntityTypeMapping TypeName="Model.Tbl_Certificate">
+              <MappingFragment StoreEntitySet="Tbl_Certificate">
+                <ScalarProperty Name="LINK" ColumnName="LINK" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,40 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Experience>
+
+@{
+    ViewBag.Title = "Experiences";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-5">
+    <div class="float-start mb-3">
+        <a href="/Admin/AddExperience" class="btn btn-info">Add Experience</a>
+    </div>
+    <table class="table table-borderless table-responsive-sm table-responsive-md bg-light">
+        <thead align="center">
+            <tr>
+                <th>Header</th>
+                <th>Company Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Detail</th>
+                <th colspan="2">Operations</th>
+            </tr>
+        </thead>
+        @foreach (var x in Model)
+        {
+            <tbody align="center">
+                <tr>
+                    <td>@x.HEADER</td>
+                    <td>@x.COMPANYNAME</td>
+                    <td>@x.STARTDATE</td>
+                    <td>@x.ENDDATE</td>
+                    <td>@x.DETAIL</td>
+                    <td><a href="/Admin/ExperienceUpdate/@x.ID" class="btn btn-outline-success">Update</a></td>
+                    <td><a href="/Admin/ExperienceDelete/@x.ID" class="btn btn-outline-danger">Delete</a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+<div style="height: 650px"></div>

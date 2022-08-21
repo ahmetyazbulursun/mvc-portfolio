@@ -1,0 +1,94 @@
+﻿@model my_website.Models.Entity.Tbl_Messages
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-wrapper">
+    <div id="page-cover" class="page-cover">
+        <div class="page-cover-wrapper-fixed">
+            <div class="page-cover-bg">
+                <div class="overlay-inner" data-gradient-bg="[['#21D4FD','#B721FF'],['#2a27db','#2754db'],['#2f46e4','#39cccc']]"></div>
+            </div>
+            <div class="page-cover-wrap">
+
+                @Html.Action("PageCover", "Home")
+
+            </div>
+        </div>
+    </div><!--end .page-cover -->
+
+    <div class="page-content">
+
+        @Html.Action("About", "Home")
+
+        @Html.Action("Skills", "Home")
+
+        @Html.Action("Experience", "Home")
+
+        @Html.Action("Projects", "Home")
+
+        @Html.Action("Certificate", "Home")
+
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-lg-auto">
+                        <div class="row mb-5">
+                            <div class="col-lg-8 mx-lg-auto text-center">
+                                <div class="section-title h2 mb-3">
+                                    <h2 class="mb-0">Contact</h2>
+                                    <span class="title-letter">C</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        @Html.Action("Contact", "Home")
+
+                        <div>
+                            <form method="post" action="/Home/Index">
+                                <div class="form-row">
+                                    <div class="form-process"></div>
+
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group error-text-white">
+                                            <input type="text" id="cf-name" name="FULLNAME" placeholder="Enter your name" class="form-control required" required>
+                                            @Html.ValidationMessageFor(x=>x.FULLNAME, "", new { @style="color: red;"})
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group error-text-white">
+                                            <input type="email" id="cf-email" name="MAIL" placeholder="Enter your email address" class="form-control required" required>
+                                            @Html.ValidationMessageFor(x => x.MAIL, "", new { @style = "color: red;" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <div class="form-group error-text-white">
+                                            <input type="text" id="cf-subject" name="SUBJECT" placeholder="Subject" class="form-control required" required>
+                                            @Html.ValidationMessageFor(x => x.SUBJECT, "", new { @style = "color: red;" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 mb-4">
+                                        <div class="form-group error-text-white">
+                                            <textarea name="MESSAGE" id="cf-message" placeholder="Message" class="form-control required" rows="7" required></textarea>
+                                            @Html.ValidationMessageFor(x => x.MESSAGE, "", new { @style = "color: red;" })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+                                        <button class="btn btn-primary">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!--end .page-content -->
+</div><!-- end .page-wrapper -->

@@ -1,0 +1,74 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Resume | Ahmet Hakan Eroglu</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ahmet Hakan Eroglu Resume Page.">
+    <meta name="author" content="Ahmet Hakan Eroglu">
+    <meta name="keywords" content="portfolio, software, software developer, c#, asp, mvc" />
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- FontAwesome JS-->
+    <script defer src="~/resume/assets/fontawesome/js/all.min.js"></script>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="~/resume/assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="~/resume/assets/css/orbit-1.css">
+
+    <link rel="icon" href="~/icon.ico" />
+
+</head>
+
+<body>
+
+    <div class="wrapper mt-lg-5 shadow-lg bg-body">
+        <div class="sidebar-wrapper">
+
+            @Html.Action("About", "Resume")
+
+            @Html.Action("Accounts", "Resume")
+
+            @Html.Action("Education", "Resume")
+
+            <div class="languages-container container-block">
+                <h2 class="container-block-title">Languages</h2>
+                <ul class="list-unstyled interests-list">
+                    <li>Turkish <span class="lang-desc">(Native)</span></li>
+                </ul>
+            </div>
+
+            @Html.Action("Interests", "Resume")
+
+        </div><!--//sidebar-wrapper-->
+
+        <div class="main-wrapper">
+
+            @Html.Action("CareerProfile", "Resume")
+
+            @Html.Action("Experiences", "Resume")
+
+            @Html.Action("Projects", "Resume")
+
+            @Html.Action("SkillsAndProficiency", "Resume")
+
+            <div style="height: 300px"></div>
+
+        </div><!--//main-body-->
+    </div>
+
+    <footer class="footer">
+        <div class="text-center">
+            <small class="copyright"> &copy; @DateTime.Now.Year Designed by <a href="https://ahmetyazbulursun.com" target="_blank">Ahmet Hakan Eroglu</a></small>
+        </div>
+    </footer>
+
+</body>
+</html>

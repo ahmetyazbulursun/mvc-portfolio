@@ -1,0 +1,36 @@
+﻿@model my_website.Models.Entity.Tbl_Education
+
+@{
+    ViewBag.Title = "EducationUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("EducationUpdateAction", "Admin"))
+{
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                @Html.HiddenFor(x => x.ID)
+                <div class="form-group col-6">
+                    <label class="form-label">Phone</label>
+                    <input type="text" name="DEPARTMENT" value="@Html.DisplayTextFor(x=>x.DEPARTMENT)" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Address</label>
+                    <input type="text" name="SCHOOL" value="@Html.DisplayTextFor(x=>x.SCHOOL)" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Mail</label>
+                    <input type="text" name="STARTDATE" value="@Html.DisplayTextFor(x=>x.STARTDATE)" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Mail</label>
+                    <input type="text" name="ENDDATE" value="@Html.DisplayTextFor(x=>x.ENDDATE)" class="form-control" />
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Update</button>
+            </div>
+        </div>
+    </div>
+}

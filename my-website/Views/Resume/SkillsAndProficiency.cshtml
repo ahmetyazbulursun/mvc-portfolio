@@ -1,0 +1,17 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Skills>
+
+<section class="skills-section section">
+    <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-rocket"></i></span>Skills &amp; Proficiency</h2>
+    <div class="skillset">
+        @foreach (var x in Model)
+        {
+            <div class="item">
+                <h3 class="level-title">@x.SKILL</h3>
+                <div class="progress level-bar">
+                    <div class="progress-bar theme-progress-bar" role="progressbar" style="width: @x.VALUE" aria-valuenow="@x.VALUE" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        }
+    </div>
+</section>

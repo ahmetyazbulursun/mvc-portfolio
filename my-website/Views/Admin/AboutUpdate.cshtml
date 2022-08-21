@@ -1,0 +1,45 @@
+﻿@model my_website.Models.Entity.Tbl_About
+
+@{
+    ViewBag.Title = "AboutUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AboutUpdateAction", "Admin"))
+{
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                @Html.HiddenFor(x=>x.ID)
+                <div class="form-group col-6">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" name="FULLNAME" value="@Html.DisplayTextFor(x=>x.FULLNAME)" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Job</label>
+                    <input type="text" name="JOB" value="@Html.DisplayTextFor(x=>x.JOB)" class="form-control" />
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label">Image</label>
+                    <input type="text" name="IMAGE" value="@Html.DisplayTextFor(x=>x.IMAGE)" class="form-control" />
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label">Image 2</label>
+                    <input type="text" name="IMAGE2" value="@Html.DisplayTextFor(x=>x.IMAGE2)" class="form-control" />
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label">Resume Image</label>
+                    <input type="text" name="RESUMEIMAGE" value="@Html.DisplayTextFor(x=>x.RESUMEIMAGE)" class="form-control" />
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label">Detail</label>
+                    @Html.TextAreaFor(x => x.DETAIL, new { @class = "form-control", @rows = "7" })
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Update</button>
+            </div>
+        </div>
+    </div>
+}
+<div style="height: 170px;"></div>

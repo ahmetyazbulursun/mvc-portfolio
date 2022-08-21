@@ -1,0 +1,46 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Contact>
+
+<div class="row mb-5">
+    @foreach (var x in Model)
+    {
+        <div class="col-md-4 mb-5 mb-md-0">
+            <div class="feature-block">
+                <div class="feature-icon text-primary mb-4">
+                    <div class="mx-auto">
+                        <i class="ti-mobile"></i>
+                    </div>
+                </div>
+                <p class="text-center">
+                    @x.PHONE
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-5 mb-md-0">
+            <div class="feature-block">
+                <div class="feature-icon text-primary mb-4">
+                    <div class="mx-auto">
+                        <i class="ti-location-pin"></i>
+                    </div>
+                </div>
+                <p class="text-center">
+                    @x.ADRESS
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="feature-block">
+                <div class="feature-icon text-primary mb-4">
+                    <div class="mx-auto">
+                        <i class="ti-email"></i>
+                    </div>
+                </div>
+                <p class="text-center">
+                    <a href="mailto:@x.MAIL" class="text-dark">@x.MAIL</a><br />
+                </p>
+            </div>
+        </div>
+    }
+</div>

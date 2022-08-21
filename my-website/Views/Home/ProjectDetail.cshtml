@@ -1,0 +1,34 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_ProjectImages>
+
+@{
+    ViewBag.Title = "ProjectDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page wrapper -->
+<div class="page-wrapper">
+
+    <div class="page-content">
+
+        <section>
+            <div class="container">
+
+                <h2 class="h2 mb-3 text-center">@ViewBag.projectHeader</h2>
+
+                <div class="slider dots-light dots-inside mb-5" data-slick='{"dots": true}'>
+                    @foreach (var x in Model)
+                    {
+                        <div>
+
+                            <img src="@x.IMAGE" alt="image" class="img-fluid">
+
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </section>
+
+    </div><!--end .page-content -->
+</div>

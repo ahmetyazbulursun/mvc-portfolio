@@ -1,0 +1,12 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Projects>
+
+<section class="section projects-section">
+    <h2 class="section-title"><span class="icon-holder"><i class="fa-solid fa-archive"></i></span>Projects</h2>
+    @foreach (var x in Model)
+    {
+        <div class="item">
+            <span class="project-title"><a href="/Home/ProjectDetail/@x.ID" target="_blank">@x.HEADER</a>
+        </div>
+    }
+</section>

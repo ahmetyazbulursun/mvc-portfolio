@@ -1,0 +1,23 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_About>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+<section id="home" class="d-flex mh-100vh">
+    <div class="container align-self-center text-white text-center">
+        @foreach (var x in Model)
+        {
+            <div class="u-avatar u-avatar-5x u-avatar-md-6x u-avatar-lg-7x u-avatar-modern u-avatar-rounded-circle mx-auto mb-4">
+                <img src="@x.IMAGE" alt="image">
+            </div>
+            <h1 class="mb-2 mb-lg-3">@x.FULLNAME</h1>
+            <p class="lead mb-0">@x.JOB</p>
+        }
+        <span class="cover-letter letter-xl text-white opacity-10">A</span>
+        <div class="py-5">
+            <a href="#about" style="all: unset; cursor: pointer;" class="scrollto">
+                <i class="bi bi-arrow-down-circle-fill" style="font-size: 3rem;"></i>
+            </a>
+        </div>
+    </div>
+</section>

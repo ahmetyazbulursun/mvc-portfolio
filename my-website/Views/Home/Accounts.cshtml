@@ -1,0 +1,15 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Accounts>
+
+<nav>
+    <ul class="list-inline text-center">
+        @foreach (var x in Model)
+        {
+            <li class="list-inline-item">
+                <a class="btn btn-sm btn-icon text-dark btn-outline-info btn-transparent rounded-circle" href="@x.LINK" target="_blank" rel="noreferrer">
+                    <span class="btn-icon-inner @x.Tbl_AccountIcons.ICON"></span>
+                </a>
+            </li>
+        }
+    </ul>
+</nav>

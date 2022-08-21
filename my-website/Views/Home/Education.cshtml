@@ -1,0 +1,14 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Education>
+
+<div class="row mb-5">
+    <div class="col-md-6 mb-5 mb-md-0">
+        <h4 class="mb-4">Education</h4>
+        @foreach (var x in Model)
+        {
+            <p class="h5">@x.DEPARTMENT</p>
+            <p>@x.SCHOOL, @x.STARTDATE - @x.ENDDATE</p>
+        }
+    </div>
+
+</div>

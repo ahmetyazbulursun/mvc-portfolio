@@ -1,0 +1,35 @@
+﻿@model my_website.Models.Entity.Tbl_Education
+
+@{
+    ViewBag.Title = "AddEducation";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label class="form-label">Department</label>
+                    <input type="text" name="DEPARTMENT" class="form-control" placeholder="Exp: Computer Engineering, Nursery..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">School</label>
+                    <input type="text" name="SCHOOL" class="form-control" placeholder="Exp: Istanbul University, Bilkent University..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Start Date</label>
+                    <input type="text" name="STARTDATE" class="form-control" placeholder="Exp: 2022, 2023..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">End Date</label>
+                    <input type="text" name="ENDDATE" class="form-control" placeholder="Exp: 2022, 2023..." />
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Add</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div style="height: 170px;"></div>

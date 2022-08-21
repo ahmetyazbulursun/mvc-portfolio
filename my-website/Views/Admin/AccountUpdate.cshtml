@@ -1,0 +1,33 @@
+﻿@model my_website.Models.Entity.Tbl_Accounts
+
+@{
+    ViewBag.Title = "AccountUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AccountUpdateAction", "Admin"))
+{
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                <div class="form-group col-6">
+                    @Html.HiddenFor(x=>x.ID)
+                    <label class="form-label">Name</label>
+                    <input type="text" name="NAME" class="form-control" value="@Html.DisplayTextFor(x=>x.NAME)" placeholder="Exp: LinkedIn, GitHub..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Icon</label>
+                    @Html.DropDownListFor(x => x.Tbl_AccountIcons.ID, (List<SelectListItem>)ViewBag.Icon, new { @class = "form-control" })
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label">Link</label>
+                    <input type="text" name="LINK" class="form-control" value="@Html.DisplayTextFor(x=>x.LINK)" placeholder="Exp: https://www.github.com/YourProfile" />
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Update</button>
+            </div>
+        </div>
+    </div>
+}
+<div style="height: 170px;"></div>

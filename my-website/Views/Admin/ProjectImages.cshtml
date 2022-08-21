@@ -1,0 +1,27 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_ProjectImages>
+
+@{
+    ViewBag.Title = "ProjectImages";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-5">
+    <table class="table table-borderless table-responsive-sm table-responsive-md bg-light">
+        <thead align="center">
+            <tr>
+                <th>Image</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        @foreach (var x in Model)
+        {
+            <tbody align="center">
+                <tr>
+                    <td><img src="@x.IMAGE" style="width: 500px" /></td>
+                    <td><a href="/Admin/ProjectImageDelete/@x.ID" class="btn btn-outline-danger">Delete</a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>

@@ -1,0 +1,12 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Interests>
+
+<div class="interests-container container-block">
+    <h2 class="container-block-title">Interests</h2>
+    <ul class="list-unstyled interests-list">
+        @foreach (var x in Model)
+        {
+            <li>@x.INTEREST</li>
+        }
+    </ul>
+</div>

@@ -1,0 +1,29 @@
+﻿@model my_website.Models.Entity.Tbl_Admin
+
+@{
+    ViewBag.Title = "AdminUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AdminUpdateAction", "Admin"))
+{
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                <div class="form-group col-6">
+                    @Html.HiddenFor(x => x.ID)
+                    <label class="form-label">Username</label>
+                    <input type="text" name="USERNAME" value="@Html.DisplayTextFor(x=>x.USERNAME)" class="form-control" />
+                </div>
+                <div class="form-group col-6">
+                    @Html.HiddenFor(x => x.ID)
+                    <label class="form-label">Password</label>
+                    <input type="text" name="PASSWORD" value="@Html.DisplayTextFor(x=>x.PASSWORD)" class="form-control" />
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Update</button>
+            </div>
+        </div>
+    </div>
+}

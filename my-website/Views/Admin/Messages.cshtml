@@ -1,0 +1,37 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_Messages>
+
+@{
+    ViewBag.Title = "Messages";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-5">
+    <table class="table table-borderless table-responsive-sm table-responsive-md bg-light">
+        <thead align="center">
+            <tr>
+                <th>Full Name</th>
+                <th>Mail</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Date</th>
+                <th colspan="2">Operations</th>
+            </tr>
+        </thead>
+        @foreach (var x in Model)
+        {
+            <tbody align="center">
+                <tr>
+                    <td>@x.FULLNAME</td>
+                    <td>@x.MAIL</td>
+                    <td>@x.SUBJECT</td>
+                    <td>@x.MESSAGE</td>
+                    <td>@(((DateTime)x.DATE).ToString("dd/MM/yyyy"))</td>
+                    <td><a href="/Admin/MessageDetail/@x.ID" class="btn btn-outline-warning">Detail</a></td>
+                    <td><a href="/Admin/MessageRead/@x.ID" class="btn btn-outline-primary">Read</a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+<div style="height: 705px"></div>

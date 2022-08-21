@@ -1,0 +1,38 @@
+﻿@using my_website.Models.Entity
+@model List<Tbl_About>
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="p-5">
+    <table class="table table-borderless table-responsive-sm table-responsive-md bg-light">
+        <thead align="center">
+            <tr>
+                <th>FullName</th>
+                <th>Img</th>
+                <th>Img 2</th>
+                <th>Resume Img</th>
+                <th>Job</th>
+                <th>Detail</th>
+                <th>Operations</th>
+            </tr>
+        </thead>
+        @foreach (var x in Model)
+        {
+            <tbody align="center">
+                <tr>
+                    <td>@x.FULLNAME</td>
+                    <td><img src="@x.IMAGE" class="img-fluid" /></td>
+                    <td><img src="@x.IMAGE2" class="img-fluid" /></td>
+                    <td><img src="@x.RESUMEIMAGE" class="img-fluid" /></td>
+                    <td>@x.JOB</td>
+                    <td>@x.DETAIL</td>
+                    <td><a href="/Admin/AboutUpdate/@x.ID" class="btn btn-outline-success">Update</a></td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+<div style="height: 410px"></div>

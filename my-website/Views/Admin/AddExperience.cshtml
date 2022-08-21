@@ -1,0 +1,39 @@
+﻿@model my_website.Models.Entity.Tbl_Experience
+
+@{
+    ViewBag.Title = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                <div class="form-group col-6">
+                    <label class="form-label">Header</label>
+                    <input type="text" name="HEADER" class="form-control" placeholder="Exp: Seo Optimizer, Intern..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Company Name</label>
+                    <input type="text" name="COMPANYNAME" class="form-control" placeholder="Exp: Google, Amazon..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">Start Date</label>
+                    <input type="text" name="STARTDATE" class="form-control" placeholder="Exp: 2022, 2023..." />
+                </div>
+                <div class="form-group col-6">
+                    <label class="form-label">End Date</label>
+                    <input type="text" name="ENDDATE" class="form-control" placeholder="Exp: 2022, 2023..." />
+                </div>
+                <div class="form-group col-12">
+                    <label class="form-label">Detail</label>
+                    <textarea class="form-control" rows="7" name="DETAIL" placeholder="Exp: I'm creating UI/UX images... "></textarea>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Add</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div style="height: 300px;"></div>

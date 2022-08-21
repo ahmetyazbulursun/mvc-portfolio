@@ -1,0 +1,23 @@
+﻿@model my_website.Models.Entity.Tbl_Interests
+
+@{
+    ViewBag.Title = "AddInterest";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="p-5">
+        <div class="mb-3">
+            <div class="row">
+                <div class="form-group col-12">
+                    <label class="form-label">Interest</label>
+                    <input type="text" name="INTEREST" class="form-control" placeholder="Exp: Swimming, Hiking..." />
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-primary btn-lg btn-block">Add</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div style="height: 300px;"></div>
