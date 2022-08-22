@@ -490,6 +490,7 @@ namespace my_website.Controllers
             value.CATEGORYID = category.ID;
             value.HEADER = p.HEADER;
             value.IMAGE = p.IMAGE;
+            value.GITHUB = p.GITHUB;
 
             db.SaveChanges();
             return RedirectToAction("Projects");

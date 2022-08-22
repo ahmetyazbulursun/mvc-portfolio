@@ -11,18 +11,13 @@ namespace my_website.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Tbl_Messages
     {
         public int ID { get; set; }
-        [MinLength(2, ErrorMessage = "At least 2 characters must be entered.")]
         public string FULLNAME { get; set; }
-        [MinLength(11, ErrorMessage = "At least 11 characters must be entered.")]
         public string MAIL { get; set; }
-        [MinLength(12, ErrorMessage = "At least 12 characters must be entered.")]
         public string SUBJECT { get; set; }
-        [MinLength(10, ErrorMessage = "At least 10 characters must be entered.")]
         public string MESSAGE { get; set; }
         public Nullable<bool> STATUS { get; set; }
         public Nullable<System.DateTime> DATE { get; set; }

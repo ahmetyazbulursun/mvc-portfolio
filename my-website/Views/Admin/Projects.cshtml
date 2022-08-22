@@ -16,6 +16,7 @@
                 <th>Header</th>
                 <th>Category</th>
                 <th>Image</th>
+                <th>GitHub</th>
                 <th colspan="4">Operations</th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                     <td>@x.HEADER</td>
                     <td>@x.Tbl_ProjectCategories.NAME</td>
                     <td><img src="@x.IMAGE" style="width: 150px" /></td>
+                    <td>@x.GITHUB</td>
                     <td><a href="/Admin/ProjectImage/@x.ID" class="btn btn-outline-primary">Add Image</a></td>
                     <td><a href="/Admin/ProjectImages/@x.ID" class="btn btn-outline-warning">Images</a></td>
                     <td><a href="/Admin/ProjectUpdate/@x.ID" class="btn btn-outline-success">Update</a></td>

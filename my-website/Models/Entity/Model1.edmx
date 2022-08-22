@@ -123,6 +123,7 @@
           <Property Name="CATEGORYID" Type="int" />
           <Property Name="HEADER" Type="varchar" MaxLength="100" />
           <Property Name="IMAGE" Type="varchar(max)" />
+          <Property Name="GITHUB" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Tbl_Skills">
           <Key>
@@ -331,6 +332,7 @@
           <Property Name="IMAGE" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Tbl_ProjectCategories" Relationship="Model.FK_Tbl_Projects_Tbl_ProjectCategories" FromRole="Tbl_Projects" ToRole="Tbl_ProjectCategories" />
           <NavigationProperty Name="Tbl_ProjectImages" Relationship="Model.FK_Tbl_ProjectImages_Tbl_Projects" FromRole="Tbl_Projects" ToRole="Tbl_ProjectImages" />
+          <Property Name="GITHUB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Tbl_Skills">
           <Key>
@@ -491,6 +493,7 @@
           <EntitySetMapping Name="Tbl_Projects">
             <EntityTypeMapping TypeName="Model.Tbl_Projects">
               <MappingFragment StoreEntitySet="Tbl_Projects">
+                <ScalarProperty Name="GITHUB" ColumnName="GITHUB" />
                 <ScalarProperty Name="IMAGE" ColumnName="IMAGE" />
                 <ScalarProperty Name="HEADER" ColumnName="HEADER" />
                 <ScalarProperty Name="CATEGORYID" ColumnName="CATEGORYID" />
