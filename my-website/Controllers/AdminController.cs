@@ -392,7 +392,7 @@ namespace my_website.Controllers
         // |-----------Project Operations----------->
         public ActionResult Projects()
         {
-            var value = db.Tbl_Projects.ToList();
+            var value = db.Tbl_Projects.Where(x => x.STATUS == true).ToList();
             return View(value);
         }
 
@@ -418,16 +418,19 @@ namespace my_website.Controllers
             var category = db.Tbl_ProjectCategories.Where(x => x.ID == p.Tbl_ProjectCategories.ID).FirstOrDefault();
 
             p.Tbl_ProjectCategories = category;
+            p.STATUS = true;
 
             db.Tbl_Projects.Add(p);
             db.SaveChanges();
             return RedirectToAction("Projects");
         }
 
-        public ActionResult ProjectDelete(int id)
+        public ActionResult ProjectDelete(Tbl_Projects p)
         {
-            var value = db.Tbl_Projects.Find(id);
-            db.Tbl_Projects.Remove(value);
+            var value = db.Tbl_Projects.Find(p.ID);
+
+            value.STATUS = false;
+
             db.SaveChanges();
             return RedirectToAction("Projects");
         }

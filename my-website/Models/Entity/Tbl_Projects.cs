@@ -25,6 +25,7 @@ namespace my_website.Models.Entity
         public string HEADER { get; set; }
         public string IMAGE { get; set; }
         public string GITHUB { get; set; }
+        public Nullable<bool> STATUS { get; set; }
     
         public virtual Tbl_ProjectCategories Tbl_ProjectCategories { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

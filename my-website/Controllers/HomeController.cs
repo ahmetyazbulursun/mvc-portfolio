@@ -69,7 +69,7 @@ namespace my_website.Controllers
 
         public PartialViewResult Projects()
         {
-            var value = db.Tbl_Projects.ToList();
+            var value = db.Tbl_Projects.Where(x => x.STATUS == true).ToList();
             return PartialView(value);
         }
 
